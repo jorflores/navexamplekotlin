@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.navigation.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_pantallaAFragment2"
+            app:destination="@id/pantallaAFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pantallaBFragment2"
+            app:destination="@id/pantallaBFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantallaAFragment"
+        android:name="com.example.navigation.PantallaAFragment"
+        android:label="fragment_pantalla_a"
+        tools:layout="@layout/fragment_pantalla_a" >
+        <action
+            android:id="@+id/action_pantallaAFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantallaBFragment"
+        android:name="com.example.navigation.PantallaBFragment"
+        android:label="fragment_pantalla_b"
+        tools:layout="@layout/fragment_pantalla_b" >
+        <action
+            android:id="@+id/action_pantallaBFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
